@@ -1,7 +1,6 @@
 """
-Holds the class 'Dice' that represents a dice in the program
+Dice module with all necessary functions to represent the dice in the program
 """
-
 import random
 
 class Dice:
@@ -14,15 +13,8 @@ class Dice:
     
     def __init__(self, sides: int):
         """
-        Checks if the new dice has a valid amount of sides and then creates the
+        Checks if the new dice has a valid amount of sides and then creates the 
         object
-        
-        Args:
-            sides (int): Number of sides for the new dice
-        
-        Raises:
-            ValueError: If sides for the new dice is not int the currently 
-            available dice types
         """
         if sides not in self.DICE_TYPES:
             raise ValueError(f"The a dice with a number of sides -> {sides} <- is not available")
@@ -30,19 +22,20 @@ class Dice:
             self.sides = sides
             
     def __str__(self):
-        """
-        String representation of the dice object
-        """
         return f"d{self.sides}"
             
     def roll(self) -> int:
         """
-        Rolls a random number between 1 and the amount of sides of the dice
-        
-        Returns:
-            The result of the rolling
+        Rolls a random number between 1 and the amount of sides of the dice and
+        returns the result
         """
         min_result = 1
         max_result = self.sides
         
         return random.randint(min_result, max_result)
+
+class History:
+    """
+    History of all rolling that has been done in the lifetime of the program
+    """
+    pass
