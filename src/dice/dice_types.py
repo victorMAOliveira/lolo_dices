@@ -30,6 +30,9 @@ class Dice:
             self.sides = sides
             
     def __str__(self):
+        """
+        String representation of the dice object
+        """
         return f"d{self.sides}"
             
     def roll(self) -> int:
